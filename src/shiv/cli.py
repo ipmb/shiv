@@ -26,7 +26,7 @@ from .constants import (
     NO_ENTRY_POINT,
 )
 
-__version__ = '0.0.31'
+__version__ = '0.0.32'
 
 # This is the 'knife' emoji
 SHIV = u"\U0001F52A"
@@ -128,6 +128,7 @@ def main(
             shutil.copytree(site_packages, tmp_site_packages)
         else:
             tmp_site_packages.mkdir(parents=True, exist_ok=True)
+
         if pip_args:
             # install deps into staged site-packages
             pip.install(["--target", str(tmp_site_packages)] + list(pip_args))
